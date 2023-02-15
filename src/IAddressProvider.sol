@@ -2,7 +2,7 @@ pragma solidity 0.8.17;
 
 import {IRegistry} from "./IRegistry.sol";
 
-/// @notice The default deployment of the `AddressProvider` contract on chains that support Curve
+/// @dev The default deployment of the `AddressProvider` contract on chains that support Curve
 IAddressProvider constant DEFAULT_DEPLOYMENT = IAddressProvider(0x0000000022D53366457F9d5E68Ec105046FC4383);
 
 interface IAddressProvider {
@@ -25,7 +25,7 @@ interface IAddressProvider {
     /// @param id Identifier to fetch an address for
     /// @return addr Address associated to the ID.
     /// @return active Is the address at this ID currently set?
-    /// @return Version Version of the current ID. Each time the address is modified, this number increments.
+    /// @return version Version of the current ID. Each time the address is modified, this number increments.
     /// @return lastModified Epoch timestamp this ID was last modified.
     /// @return description Human-readable description of the ID.
     function get_id_info(uint256 id)
