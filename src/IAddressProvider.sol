@@ -1,5 +1,7 @@
 pragma solidity 0.8.17;
 
+import {IRegistry} from "./IRegistry.sol";
+
 /// @notice The default deployment of the `AddressProvider` contract on chains that support Curve
 IAddressProvider constant DEFAULT_DEPLOYMENT = IAddressProvider(0x0000000022D53366457F9d5E68Ec105046FC4383);
 
@@ -7,7 +9,7 @@ interface IAddressProvider {
     /// @notice Get the address of the main registry contract
     /// @dev This is a gas-efficient way of calling `AddressProvider.get_address(0)`
     /// @return main registry contract
-    function get_registry() external view returns (address);
+    function get_registry() external view returns (IRegistry);
 
     /// @notice Get the highest ID set within the address provider
     /// @return max ID
